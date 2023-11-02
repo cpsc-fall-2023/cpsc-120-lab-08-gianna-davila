@@ -1,6 +1,7 @@
 // Gianna Davila
 // dgianna@csu.fullerton.edu
 // @dgianna707
+// Partners: @dgianna707
 
 #include <iostream>
 #include <string>
@@ -16,7 +17,7 @@ int main(int argc, char* argv[]) {
     std::string protein = arguments[1];
     std::string bread = arguments[2];
     std::string condiment = arguments[3];
-    std::cout << "A " << protein << " sandwich on " << bread
+    std::cout << "Your Order: A " << protein << " sandwich on " << bread
               << " with " << condiment << ".\n";
     return 0;
   }
