@@ -9,21 +9,25 @@
 
 int main(int argc, char* argv[]) {
   std::vector<std::string> arguments{argv, argv + argc};
+  int total{static_cast<int>(arguments.size() - 1)};
 
-  if (arguments.size() < 2) {
+  if (arguments.size() == 1) {
     std::cout << "error: you must supply at least one number";
     return 1;
   }
 
   double sum = 0.0;
 
-  for (double i = 1; i < arguments.size(); ++i) {
-    double arg{std::stod(arguments[i])};
-    sum += arg;
+  for (std::string arg : arguments) {
+    if (arg == arguments[0]) {
+      arg = "0";
+      continue;
+    }
+    sum += std::stod(arg);
   }
 
   double average = 0.0;
-  average = sum / arguments.size() - 1 ;
+  average = sum / total;
   std::cout << "average = " << average << "\n";
 
   return 0;
